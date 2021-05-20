@@ -3,6 +3,8 @@
 # Food Delivery Client
 Full Client that communicates with the backend Server system through REST API for Food Delivery Applications. Written in go/ golang with search, auto complete and suggestive search as well. The server also utilizes different flags that can be switced on and off, depending on environment settings and testing requirements.
 
+<img src = "https://i.imgur.com/2rdSode.png" width="700">
+
 <h2>Introduction</h2>
 
 <p>The client app was an extension of the server application to allow different merchants on board to make their own changes to their menu items with us. As the clients' interfaces uses API keys that can be retrieved from the main server after loggin in, merchants are able to make changes to their menu items easily as long as they have their API key, and have a browser to access https://kvclient.sozoalvin.com</p>
@@ -12,7 +14,7 @@ Full Client that communicates with the backend Server system through REST API fo
 <p>Amazon Web Services RD2 - mySQL - Server only (client does not have a direct access to the database)</p>
 <p>Amazon Web Servies Https LB - load balanced</p>
 
-<h2>How to view the entire project in action</h2>
+<h2>View the Entire Project in Action</h2>
 <p>It is best to open up both the server as well as the client along with the instructions to see the project in action.</p>
 <p>Click <a href="https://kvserver.sozoalvin.com">here</a> for the backend server</p>
 <p>Click <a href="https://kvclient.sozoalvin.com">here</a> for the client server</p>
@@ -59,38 +61,31 @@ Sample RestAPI query URL if -productionFlag and -domain are specified
 
 ```https://www.yourdomainname.com/api/v1/apivalidation?api=dummy_api_key_here_pleae_paste_your_own```
 
+<h2>API Validating is Easy</h2>
+<img src = "https://i.imgur.com/izEYc3a.png" width="700">
 
-<h2>Search Away to Discover Great Tasting Food!</h2>
-<img src = "https://i.imgur.com/XFUVxvV.png" width="700">
+<h2>Merchant Account Setup</h2>
+<p>Set up your merchant account with your brand's name, detailed location, postal code and operating hours. Now it even includes a cut off timing!</p>
+<img src = "https://i.imgur.com/d0onXT9.png" width="700">
 
-<h2>Access Your Own Account's API</h2>
-<p>Lost API? Revoke with a simple click and lock out all clients using your old API key</p>
-<img src = "https://i.imgur.com/ojn0LQ4.png" width="700">
+<h2>Adding a Food Menu Item</h2>
+<img src = "https://i.imgur.com/PsVqYUA.png" width="700">
+<p>Sample food item being added</p>
+<img src ="https://i.imgur.com/eWoAvl1.png" width="700"> 
+<p>Did you know that items added by merchants are immediately searchable and indexed by the main server?</p>
+<img src = "https://i.imgur.com/usoiJz7.png" width="700"> 
+<img src = "https://i.imgur.com/X74JVYF.png" width="700"> 
 
-<h2>Easily Add Any Items to Cart</h2>
-<img src = "https://i.imgur.com/FKjFCQ8.png" width="700">
+<h2>Editing a Food Menu Item</h2>
+<img src = "https://i.imgur.com/AswqL4D.png" width="700">
+<p>Editing a food menu item doens't have to be complicated when it's only 2 clicks + 2 forms</p>
+<img src ="https://i.imgur.com/QUHaoya.png" width="700"> 
 
-<h2>Admin Users Get Special Settings for Service Recovery</h2>
-<img src = "https://i.imgur.com/16XvZTt.png" width="700">
+<h2>Deleting a Food Menu Item</h2>
+<p>Deleting a food menu item is also very straightforward</p>
+<img src = "https://i.imgur.com/EVAwxEz.png" width="700">
 
-<h2>Regular Account Types at Cart Option</h2>
-<img src = "https://i.imgur.com/pHjQuLW.png" width="700">
+<h2>View All Menu Records</h2>
+<img src = "https://i.imgur.com/6HBNKx3.png" width="700"> 
 
-<h2>Customer's Checkout Page</h2>
-<img src = "https://i.imgur.com/PVTs0E7.png" width="700">
-
-<h2>Priority Queues for Service Recvery</h2>
-<img src = "https://i.imgur.com/c63vP9z.png" width="700">
-
-<h2>Driver Assignment</h2>
-<img src = "https://i.imgur.com/1Nye0iX.png" width="700">
-<img src = "https://i.imgur.com/bhKLJWl.png" width="700">
-
-<h2>Read, Get Set, Dispatch and it's a GO!</h2>
-<img src = "https://i.imgur.com/xJjm2yX.png" width="700">
-
-
-<h2>Easily View All System Information</h2>
-<img src = "https://i.imgur.com/DCrvoAL.png" width="700">
-<img src = "https://i.imgur.com/qhb7rVt.png" width="700">
 
