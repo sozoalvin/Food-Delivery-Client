@@ -5,6 +5,11 @@ Full Client that communicates with the backend Server system through REST API fo
 
 <img src = "https://i.imgur.com/2rdSode.png" width="700">
 
+<h2>View the Entire Project in Action</h2>
+<p>It is best to open up both the server as well as the client along with the instructions to see the project in action.</p>
+<p>Click <a href="https://kvserver.sozoalvin.com">Here</a> for the Backend Server</p>
+<p>Click <a href="https://kvclient.sozoalvin.com">Here</a> for the Client Server</p>
+
 <h2>Introduction</h2>
 
 <p>The client app was an extension of the server application to allow different merchants on board to make their own changes to their menu items with us. As the clients' interfaces uses API keys that can be retrieved from the main server after loggin in, merchants are able to make changes to their menu items easily as long as they have their API key, and have a browser to access https://kvclient.sozoalvin.com</p>
@@ -14,10 +19,6 @@ Full Client that communicates with the backend Server system through REST API fo
 <p>Amazon Web Services RD2 - mySQL - Server only (client does not have a direct access to the database)</p>
 <p>Amazon Web Servies HTTP/HTTPS LB - load balancer</p>
 
-<h2>View the Entire Project in Action</h2>
-<p>It is best to open up both the server as well as the client along with the instructions to see the project in action.</p>
-<p>Click <a href="https://kvserver.sozoalvin.com">here</a> for the backend server</p>
-<p>Click <a href="https://kvclient.sozoalvin.com">here</a> for the client server</p>
 
 <h2>Understand How RESTAPI works in the Project</h2>
 <p>Click<a href="https://github.com/sozoalvin/Food-Delivery-Client/blob/master/Instructions/Understanding_RESTAPI.pdf"> Here </a> to learn more about how RESTAPI was deployed on the backend server as well as the client's</p>
