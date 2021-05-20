@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Food</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  <style type="text/css">
+   body { background: #FFCC00 !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
+
+</head>
+<body>
+
+{{template "new-navbar"}}
+
+<div class="container maincontainerindex">
+  <div class="row mt-5">
+    <div class="col-sm"></div>
+    <div class="col-sm shadow-lg">
+    {{/* <img src="https://i.ibb.co/C8QV3cQ/tom-yum-nodots.png"> */}}
+    <img src="assets/rs3.png">
+    </div>
+    <div class="col-sm"></div>
+  </div>
+</div>
+
+<div class="container pb-5"></div> 
+<div class="container bg-light ml-10 mr-10 rounded shadow-sm pt-1 pb-1 pl-4 mb-3 bg-white rounded">
+<div class="container p-1">
+<h3>Create a New Item Here!</h3>
+</div></div>
+
+<div class="container bg-light ml-10 mr-10 rounded shadow-sm pt-3 pb-1 pl-4 mb-3 bg-white rounded">
+<form method="post">
+
+  <div class="form-group pt-1">
+
+    {{if .Merchant.MerchantName}}
+  <h5> Your Brand's Name:</h5> <i>{{.Merchant.MerchantName}}</i>
+  <br><br><h5> Your Brand's Address:</h5><i>{{.Merchant.Address}}</i>
+
+  <br><br><p>If you think that the above information is wrong, please contact KV FOOD customer service <b>immediately</b>.</p>
+
+
+<h5>Instructions</h5>
+<p>Please only use this page to create new food dishes. To edit and delete another menu item, please use the other pages</p>
+
+    <label for="exampleFormControlInput1">Food Name</label>
+    <input type="text" class="form-control" name="dishName" placeholder="Nasi Lemak with Fried Egg (maximum 50 characters including white spaces)">
+  </div><p class="text-danger inline small">{{ .Me.dishName}}</p>
+
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Unit Price (SGD)</label>
+    <input type="text" class="form-control" name="unitPrice" placeholder="Enter Your Price here. e.g 5.80 (3 characters) or 10.99 (4 characters)">
+  </div><p class="text-danger inline small">{{ .Me.unitPrice}}</p>
+    
+
+      {{/* <input type="submit"> */}}
+
+      <button class="btn btn-dark text-justify">Create</button><br><br>
+
+      {{else}}
+      <h5>There is something wrong with your API key. Please click <a href="/userprofile">here</a> to revalidate your API key.<br><br> If you have not set up your merchant account yet, please click <a href="/merchantsetup">here</a> to have it set up first.</h5>
+{{end}}
+
+      <div class ="container pb-3"></div>
+
+</form>
+
+</div>
+</div>
+
+</body>
+</html>

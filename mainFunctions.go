@@ -2,69 +2,105 @@ package main
 
 import (
 	"fmt"
-	"sort"
 	"strconv"
+	"strings"
+	"time"
 )
 
-var FoodMerchantNameAddress []string
-var FoodMerchantNameAddress1 []string
+func generateApiKey(s string) string {
 
-func concatenateFoodList() { //return you a slice of strings
-	fmt.Println(V)
+	var timeNow string = time.Now().Format("010206")
+
+	result := strings.Split(s, "")
+
+	result1 := result[0:26]
+
+	result1WithDate := append(result1, timeNow)
+
+	userApiKey := strings.Join(result1WithDate, "")
+
+	return userApiKey
 }
 
-func CreateFoodList(ch chan string) {
-	// func CreateFoodList() []string {
+func retrieveUserApiKey(un string) string {
 
-	for _, v := range V {
-		FoodMerchantNameAddress = append(FoodMerchantNameAddress, v.FoodName+" - "+v.MerchantName+" - "+v.DetailedLocation)
+	var apiKey string
+
+	rows, err := db.Query(`SELECT apiKey FROM usersDB where un =?`, un)
+
+	check(err)
+	defer rows.Close()
+
+	for rows.Next() {
+		err = rows.Scan(&apiKey)
+		check(err)
 	}
-	sort.Strings(FoodMerchantNameAddress)
-	ch <- "Mandatory - Food List Data Generated"
+	return apiKey
 }
 
-func generateTransactionID() (string, error) {
+func showSessions() {
+	fmt.Println("********")
+	fmt.Println("")
+}
 
-	var generatedID string
-	//for every element wihch is stored based on PID as key, should have unique generated ID
+func checkPostalCodeInputValidity(s []string) bool {
 
-	mutex.Lock()
-	{
-		sTransID := strconv.Itoa(TransID)
+	for _, v := range s {
 
-		generatedID = "MC" + sTransID + "KV" // generated ID will always be unique
-
-		TransID++
+		if len(v) != 9 {
+			return false
+		}
 	}
-	mutex.Unlock()
 
-	return generatedID, nil
+	for _, v := range s {
 
-}
+		OperatingHours := strings.Split(v, "")
+		startingTimeSlice := OperatingHours[:4] //gives me the first 4 digits representing the operating hours
+		endingTimeASlice := OperatingHours[6:]  //gives me the last 4 digits representing the closing hours
 
-func generateSysQueueID() (string, error) {
+		startingTimeString := strings.Join(startingTimeSlice, "")
+		endingTimeString := strings.Join(endingTimeASlice, "")
 
-	var generatedSysQueueID string
+		startingTimeInt, err := strconv.Atoi(startingTimeString)
+		if err != nil {
+			fmt.Println("error occured when converting starting time's string to int")
+			return false
+		}
+		endingTimeInt, err2 := strconv.Atoi(endingTimeString)
 
-	mutex.Lock()
-	{
-		SQueueID := strconv.Itoa(QueueID)
+		if err2 != nil {
+			fmt.Println("error occured when converting starting time's string to int")
+			return false
+		}
 
-		generatedSysQueueID = "OS" + SQueueID + "KV" // generated ID will always be unique
+		if startingTimeInt < endingTimeInt {
+			return false
+		}
 
-		QueueID++
 	}
-	mutex.Unlock()
 
-	return generatedSysQueueID, nil
+	return true
 }
 
-func retrieveFoodNameAndPrice(pid string) (string, float64) {
+func toTitle(s string) string {
 
-	foodName := foodNameAddresstoname[pid] //foodNameAddresstname = global MAP
+	slice := strings.Split(s, "")
+	var pos []int
+	for i := 0; i < len(slice); i++ {
 
-	unitCost := MyFoodListMap[foodName].Price
+		if slice[i] == " " {
+			pos = append(pos, i+1)
+			i++
+		}
 
-	return foodName, unitCost
+	}
+	pos = append(pos, 0)
+	for i := 0; i < len(pos); i++ {
 
+		slice[pos[i]] = strings.ToUpper(slice[pos[i]])
+
+	}
+	result := strings.Join(slice, "")
+
+	return result
 }
