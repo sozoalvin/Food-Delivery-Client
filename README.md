@@ -12,7 +12,7 @@ Full Client that communicates with the backend Server system through REST API fo
 <h2>Tech Stacks Employed</h2>
 <p>Amazon Web Services EC2 - Ubuntu</p>
 <p>Amazon Web Services RD2 - mySQL - Server only (client does not have a direct access to the database)</p>
-<p>Amazon Web Servies Https LB - load balanced</p>
+<p>Amazon Web Servies HTTP/HTTPS LB - load balancer</p>
 
 <h2>View the Entire Project in Action</h2>
 <p>It is best to open up both the server as well as the client along with the instructions to see the project in action.</p>
